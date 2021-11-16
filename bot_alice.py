@@ -40,6 +40,13 @@ def say_good_morning(my_id):
     return bot.send_message(my_id, message)
 
 
+def say_test(my_id):
+
+
+    message = f'test'
+
+    return bot.send_message(my_id, message)
+
 def say_good_evening(my_id):
     a = ['волшебная', 'восхитительная', 'замечательная', 'любимая', 'кайфовая', 'дружная']
     b = ['почищу зубки', 'помассирую Шанечку', 'слопаю 45 пельмешков', 'повозюкаю маркерами на обоях', 'покричу на пылесос']
@@ -67,6 +74,7 @@ if __name__ == '__main__':
 
     schedule.every().day.at("09:00").do(say_good_morning, chat_id)
     schedule.every().day.at("21:00").do(say_good_evening, chat_id)
+    # schedule.every().day.at("17:58").do(say_test, chat_id)
 
     Thread(target=poll).start()
 
