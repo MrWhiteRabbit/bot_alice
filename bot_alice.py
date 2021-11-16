@@ -71,13 +71,15 @@ def get_text_messages(message):
 
 
 if __name__ == '__main__':
-
-    schedule.every().day.at("09:00").do(say_good_morning, chat_id)
-    schedule.every().day.at("21:00").do(say_good_evening, chat_id)
+    try:
+        schedule.every().day.at("09:00").do(say_good_morning, chat_id)
+        schedule.every().day.at("21:00").do(say_good_evening, chat_id)
     # schedule.every().day.at("17:58").do(say_test, chat_id)
 
-    Thread(target=poll).start()
+        Thread(target=poll).start()
 
-    while True:
-        schedule_checker()
+        while True:
+            schedule_checker()
 
+    except Exception as e:
+        print(e)
