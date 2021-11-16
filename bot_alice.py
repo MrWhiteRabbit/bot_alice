@@ -63,9 +63,6 @@ def get_text_messages(message):
         bot.send_message(message.chat.id, f'Сегодня мне {fd} дней!')
 
 
-bot.polling(none_stop=True, interval=0)
-
-
 if __name__ == '__main__':
 
     schedule.every().day.at("09:00").do(say_good_morning, chat_id)
